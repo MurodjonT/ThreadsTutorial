@@ -41,7 +41,10 @@ struct LoginView: View {
                         .foregroundStyle(.black)
                 }
                 
-                MainButton(title: "Log In", backgroundColor: .black, foregroundStyle: .white)  {}
+                MainButton(title: "Log In", backgroundColor: .black, foregroundStyle: .white)  {
+                    // Handle login action here
+                    
+                }
 
                 Spacer()
                 
