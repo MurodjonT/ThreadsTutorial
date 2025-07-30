@@ -70,13 +70,13 @@ struct EditProfileView: View {
             .navigationTitle("Edit Profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
                     }
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(.primary)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button("Edit") {
                     }
                     .font(.system(size: 16, weight: .semibold))

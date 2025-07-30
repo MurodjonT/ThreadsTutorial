@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ThreadsTabView: View {
     @State private var selectedTab = 0
+    @State private var isPresentingThreadCreation = false
     var body: some View {
         TabView(selection: $selectedTab){
             FeedView()
@@ -24,7 +25,7 @@ struct ThreadsTabView: View {
                 }
                 .onAppear { selectedTab = 1 }
                 .tag(1)
-            ThreadCreation()
+            Text("")
                 .tabItem {
                     Image(systemName: "plus.app.fill")
                 }
@@ -45,7 +46,17 @@ struct ThreadsTabView: View {
                 .onAppear { selectedTab = 4 }
                 .tag(4)
         }
-        .tint(.black)
+        .onChange(of: selectedTab) { oldValue, newValue in
+            if newValue == 2 {
+                isPresentingThreadCreation = true
+                selectedTab = 0
+            }
+        }
+
+        .sheet(isPresented: $isPresentingThreadCreation) {
+            ThreadCreation()
+            }
+            .tint(.black)
     }
 }
 
