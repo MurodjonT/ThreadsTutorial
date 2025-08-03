@@ -40,6 +40,7 @@ struct EditProfileView: View {
                     VStack(alignment: .leading) {
                         Text("Bio")
                             .font(.system(size: 16, weight: .semibold))
+                            .foregroundStyle(.primary)
                         TextField("Enter your bio", text: $bio, axis: .vertical)
                     }
                     
